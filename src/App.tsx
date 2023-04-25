@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import { NumberInputForm } from './components/NumberInputForm'
 import { NumberDisplay } from './components/NumberDisplay'
+import { serie } from './modules/utils'
 
 const App:React.FC = () => {
   const [number, setNumber] = useState<number | null>(null);
@@ -10,7 +11,8 @@ const App:React.FC = () => {
 
 
   const handleSubmit = (newNumber: number) => {
-    setNumber(newNumber);
+    const serieNumber=  serie(newNumber)
+    setNumber(serieNumber);
   };
 
   return (
